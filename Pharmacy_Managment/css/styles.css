@@ -1,0 +1,562 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color:#364a63;
+  font-family:'ALSSchlangesans-Bold', Arial, sans-serif;
+
+}
+
+.material-icons-outlined {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 35px;
+  
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main';
+  height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  grid-area: header;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -3px rgb(255, 255, 255);
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: #ffffff;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 20px;
+}
+
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+.sidebar-list {
+  padding: 0;
+  margin-top: 40px;
+
+  list-style-type: none;
+}
+.available {
+  color: green;
+}
+
+.low {
+  color: yellow;
+}
+
+.out-of-stock {
+  color: red;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 30px 20px;
+  font-size: 18px;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: #536585;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  /*
+    the z-index of the ApexCharts is 11
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
+  z-index: 12 !important;
+}
+
+/* ---------- MAIN ---------- */
+
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px 20px;
+  color: #364a63;
+}
+
+
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.card:first-child {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.card:nth-child(2) {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+}
+
+.card:nth-child(3) {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.card:nth-child(4) {
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+}
+
+.card:nth-child(5) {
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+}
+
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > .material-icons-outlined {
+  font-size: 45px;
+  transition: color 0.3s;
+}
+
+.card:hover .material-icons-outlined {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1em;
+  line-height: 1.5;
+}
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.charts-card {
+  background-color: #263043;
+  margin-bottom: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Hide the submenu by default */
+/* Style for the sidebar list items */
+
+
+/* Style for the sidebar links */
+/* Style for the sidebar list items */
+
+/* Style for the sidebar links */
+.sidebar-list-item a {
+  text-decoration: none;
+  color: #364a63;
+}
+
+/* Change color of the sidebar links on hover */
+.sidebar-list-item:hover a  {
+  color: #11c393;
+}
+
+
+/* Style for the dropdown items */
+.subme {
+  display: none;
+  list-style-type: none;
+  padding-left: 0;
+  color: #263043;
+}
+
+
+.sidebar-list-item:hover .subme {
+  display: block;
+}
+
+.square {
+  position: relative;
+  width: 980px; 
+  border: 0.1px solid #c5e0f8;
+  border-radius: 10px; 
+  padding: 20px; 
+  box-sizing: border-box;
+  overflow: auto;
+  background-color:#fbfbfb; 
+}
+
+.formlab {
+  font-size: 18px;
+
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 40px; /* Add spacing between label and input */
+}
+.btn {
+  margin-top: 30px;
+  margin-left: 20px;
+  background-color: #007bff; /* Blue background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor style */
+  transition: background-color 0.3s; /* Smooth color transition */
+}
+
+.btn:hover {
+  background-color: #11c393; /* Darker blue on hover */
+}
+
+
+
+
+.formcontact {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Add transition property */
+}
+.formdes{
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+  height: 100px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.formcontact:focus {
+  border-color: #11c393;
+  outline: 0; /* Remove default outline */
+  box-shadow: 0 0 0 0.2rem #b8f0e1; /* Add box shadow when focused */
+}
+
+
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Each form wrapper will take up equal space */
+  padding: 0 5px; /* Add padding to adjust spacing */
+}
+.row1, .row2, .row3 {
+  display: flex;
+  flex-direction: row; /* Arrange elements horizontally */
+  justify-content: space-between; /* Distribute space evenly between elements */
+  align-items: center; /* Center items vertically */
+  flex: 1; /* Each row will take up equal space */
+}
+
+.row1 {
+  justify-content: flex-end; /* Align elements to the right */
+}
+
+.row2 {
+  justify-content: center; /* Center elements horizontally */
+}
+
+.row3 {
+  justify-content: flex-start; /* Align elements to the left */
+}
+.table tbody tr:hover {
+  background-color: blue; /* Change the background color when hovered */
+  color: white; /* Change the text color for better contrast */
+}
+
+
+
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Medium <= 992px */
+
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+  }
+}
+table,th,tr{
+  padding: 1rem;
+}
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+
+.dropdown-menu li {
+  list-style-type: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #364a63;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #fff;
+  color: #11c393;
+}
+
+.split {
+  background: linear-gradient(to right, #4CAF50, #4CAF50 50%, #2E8B57 50%, #2E8B57);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  
+  transition: all 0.3s ease;
+  font-size: 10px;
+}
+
+
+/* Hover Effect for Button */
+.split:hover {
+  background: linear-gradient(to right, #2E8B57, #2E8B57 50%, #4CAF50 50%, #4CAF50);
+}
+
+/* Dropdown Container Styles */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Menu Styles */
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  width: 120px;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+ right: 0.1px;
+  transform: translateX(-50%); 
+}
+
+
+.dropdown-iteme {
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  
+}
+
+
+
+.dropdown-item {
+  padding: 8px 16px;
+}
+
+
+
+.dropdown-item:hover a {
+  color: inherit; /* Set to inherit to maintain original color */
+}
+
+/* Small <= 768px */
+
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
+.notify {
+  position: relative;
+  margin: 20px;
+  display: inline-block;
+
+}
+
+/* Badge style */
+.icon-button_badge {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 12px;
+}
+
+/* Notification menu style */
+.notify-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 300px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Notification menu list style */
+.notify-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notify-menu ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+.icon-button {
+background: none;
+border: none;
+cursor: pointer;
+outline: none;
+}
+
+.notify-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.notify-menu ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.notify-menu ul li a:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Notification button style */
+.notify-btn {
+  cursor: pointer;
+}
+
+/* Notification icon style */
+.material-icons-outlined.notification-icon {
+  font-size: 24px;
+  color: #333; /* Adjust the color as needed */
+}
+
